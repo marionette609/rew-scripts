@@ -25,7 +25,11 @@ for freq, levels in measure_data.items():
         if distortion_to_plot in thd:
             this_level.append(float(thd.get(distortion_to_plot)))
         else:
-            this_level.append(-100.0)
+            # making up some fake value out of range of plot for now
+            # this only really applies for individual harmonics
+            # where the harmonic is outside of range of measurement
+            # or the fundamental is outside range of equipment (<20hz)
+            this_level.append(-130.0) 
     graph_levels.append(this_level)
 
 
