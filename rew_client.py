@@ -50,7 +50,7 @@ def generator_set_freq(freq):
             "lockFrequencyToRTAFFT": False,
             "addHarmonicDistortion": False,
             "addDither": True,
-            "ditherBits": 32
+            "ditherBits": 24
         }
     )
 

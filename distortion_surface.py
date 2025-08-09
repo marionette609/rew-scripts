@@ -29,7 +29,7 @@ def get_distortion(frequency, level, units=""):
     rew_client.generator_stop()
     dist = rew_client.rta_get_distortion()
     if len(dist) > 1:
-        raise Exception('Distortion array greater than 1, investigate') # this hasn't happened, I don't know when it does
+        raise Exception('More than 1 input detected in RTA, a single input should be used')
     dist = dist[0]
     # keep file size down, only taking data we want
     reduced_dist = {}
@@ -67,3 +67,4 @@ def start_sweep(frequency_values):
 
 
 start_sweep(_FREQUENCIES)
+# start_sweep(_TEST_FREQUENCIES)
