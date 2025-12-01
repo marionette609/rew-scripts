@@ -36,6 +36,8 @@ def get_distortion(frequency, level, units=""):
     reduced_dist["thdPlusN"] = dist.get("thdPlusN").get("value")
     if "thd" in dist:
         reduced_dist["thd"] = dist.get("thd").get("value")
+    if "rmsNandNHDdBFS" in dist:
+        reduced_dist["NandNHD"] = dist.get("rmsNandNHDdBFS")
     h_count = 2
     for harmonic in dist.get("harmonics"):
         reduced_dist[f'H{h_count}'] = harmonic.get("value")
